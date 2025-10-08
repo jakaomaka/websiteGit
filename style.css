@@ -4,18 +4,13 @@
 }
 
 :root {
-    --glow-color: blue;
-    --bez-color: #ced7bc;
     --white: white;
     --black: black;
     --lightgray: lightgray;
-    --highlight: white;
     --blue: blue;
-    --blue-light: #8a95ff;
-    --blue-dark: #484d7a;
+    --blue-light: #4d4dff;
+    --blue-dark: blue;
     --headerfooter-color: white;
-    --pink: white;
-    --pink2: #ad6d90;
     --green-highlight: #525252;
 
 
@@ -39,7 +34,7 @@ h2 {
 }
 
 h3 {
-    font-family: Arial Narrow, Arial, sans-serif;
+    font-family: Impact, Arial Narrow, Arial, sans-serif;
     color: var(--white);
 }
 
@@ -134,20 +129,8 @@ a:hover {
 }
 
 .header-logoText:hover {
-    /*filter: brightness(1.1);*/
-    /*text-shadow: 0.1vw 0.1vw 0 var(--glow-color),
-                 -0.1vw -0.1vw 0 var(--glow-color),
-                 0.1vw -0.1vw 0 var(--glow-color),
-                 -0.1vw 0.1vw 0 var(--glow-color);*/    
-    /* text-shadow: 1px 1px 0 var(--glow-color),
-                 -1px -1px 0 var(--glow-color),
-                 1px -1px 0 var(--glow-color),
-                 -1px 1px 0 var(--glow-color);   */
-
     text-decoration-thickness: 1px;
     text-decoration-color: var(--blue);
-                 
- 
 }
 
 .header-logoText:hover > .header-img {
@@ -292,12 +275,14 @@ a:hover {
 .portfolio-item h3 {
     z-index: 10;
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    bottom: 0;
     font-size: clamp(16px, 2em, 2em);
     font-weight: normal;
     margin: 0;
-    text-align: left;
+    text-align: center;
+    opacity: 0;
+
+    text-transform: uppercase;
 
     width: 100%;
     overflow: none;
@@ -353,38 +338,41 @@ a:hover {
 }
 
 .portfolio-item:hover > h3 {
-    --glow-distance: 1px;
-
+    opacity: 1;
     text-decoration-color: inherit;
+    paint-order: stroke;
+    -webkit-text-stroke-width: 6px;
+    -webkit-text-stroke-color: black;
 
-    text-decoration: underline;
-    text-shadow: var(--glow-distance) var(--glow-distance) var(--glow-distance) var(--black),
-                calc(var(--glow-distance) * -1) calc(var(--glow-distance) * -1) var(--glow-distance) var(--black),
-                var(--glow-distance) calc(var(--glow-distance) * -1) var(--glow-distance) var(--black),
-                calc(var(--glow-distance) * -1) var(--glow-distance) var(--glow-distance) var(--black);
 }
 
 @media (max-width: 600px) {
 
     .portfolio-item h3{
-        --glow-distance: 0.2vw;
-        --glow-color: black;
+        paint-order: stroke;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: black;
 
+        opacity: 1;
         color:white;
         font-size: 4vw;
         font-weight: normal;
-        text-decoration: underline;
         mix-blend-mode: normal;
 
-        text-shadow: var(--glow-distance) var(--glow-distance) var(--glow-distance) var(--glow-color),
-                    calc(var(--glow-distance) * -1) calc(var(--glow-distance) * -1) var(--glow-distance) var(--glow-color),
-                    var(--glow-distance) calc(var(--glow-distance) * -1) var(--glow-distance) var(--glow-color),
-                    calc(var(--glow-distance) * -1) var(--glow-distance) var(--glow-distance) var(--glow-color);
     }
 
-    /* .portfolio-item:hover > h3 {
-        --glow-color: white;
-    } */
+    .portfolio-item:hover > h3 {
+        paint-order: stroke;
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: black;
+
+        opacity: 1;
+        color:white;
+        font-size: 4vw;
+        font-weight: normal;
+        mix-blend-mode: normal;
+
+    }
     
 }
 
@@ -393,11 +381,12 @@ a:hover {
 
 .portfolio-item-heart-img {
     height: 100%;
-    /* background: url(images/avb_ment_ig_a3.png) no-repeat center center/cover; */
     cursor: pointer;
     max-width: 100%;
     position: relative;
     aspect-ratio: 4/5;
+
+    overflow: hidden;
 }
 
 .portfolio-item-heart-img-background {
@@ -420,6 +409,16 @@ a:hover {
     pointer-events: none;
     user-select: none;
     /* rotate: 50deg; */
+}
+
+.portfolio-item-heart-img img{
+    object-fit: cover;
+}
+
+.portfolio-item-heart-img:hover > img {
+    position: relative;
+    z-index: 0;
+    transform: scale(1.01);
 }
 
 @keyframes grow {
@@ -463,18 +462,17 @@ a:hover {
 
 h4 {
     font-family: Arial Narrow, Arial, sans-serif;
-    color: var(--highlight);
-    font-size: 8vw;
+    color: var(--white);
+    font-size: 2em;
     font-weight: bolder;
     line-height: 1;
     margin-top: 0;
-    border-radius: clamp(2px, 5px, 5px);
 }
 
 
 h5 {
     font-family: Figtree, Arial, sans-serif;
-    color: var(--highlight);
+    color: var(--white);
     font-size: 1.2em;
     font-weight: bold;
     margin-top: 0;
@@ -483,7 +481,7 @@ h5 {
 
 .project-page p {
     margin-top: 0;
-    text-align: justify;
+    text-align: left;
 }
 
 .project-page {
@@ -511,18 +509,20 @@ h5 {
 .project-page-header{
     display: inline-block;
     box-sizing: border-box;
-    padding: var(--padding-project-page);
-    background-color: var(--blue-dark);
-    border-radius: 20px;
+    padding-bottom: var(--padding-project-page);
+    padding-right: var(--padding-project-page);
+    background-color: var(--blue);
+    border-radius: 2px;
     margin-bottom: 20px;
 }
 
 .project-page-subheader {
     margin-left: calc(var(--padding-project-page) * -1);
 
+    font-size: 2em;
     display: inline-block;
     box-sizing: border-box;
-    background-color: var(--pink2);
+    background-color: var(--blue-dark);
 
     padding: 0;
 }
@@ -551,10 +551,8 @@ h5 {
 }
 
 .project-grid > img {
-    /* height: 100%; */
     height: auto;
     width: 100%;
-    /* object-fit: cover; */
     object-fit: contain;
     display: block;
 
@@ -672,6 +670,7 @@ h5 {
 .bio-page p {
     text-align: left;
     background-color: var(--blue);
+    border-radius: 2px;
 }
 
 .star {
