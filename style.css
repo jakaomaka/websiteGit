@@ -3,6 +3,11 @@
     src: url(fonts/Figtree-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: 'Impact';
+    src: url(fonts/impact.ttf);
+}
+
 :root {
     --white: white;
     --black: black;
@@ -112,12 +117,6 @@ a:hover {
     }
 }
 
-/*.header img {
-    float:left;
-    height: 60px;
-    width: auto;
-}
-*/
 
 .header-img {
     width: 60px;
@@ -319,14 +318,6 @@ a:hover {
     font-size: 40px;
     font-weight: normal;
 
-
-    /* user-select: none;
-
-        text-shadow: var(--glow-distance) var(--glow-distance) var(--glow-distance) var(--green-highlight),
-                calc(var(--glow-distance) * -1) calc(var(--glow-distance) * -1) var(--glow-distance) var(--green-highlight),
-                var(--glow-distance) calc(var(--glow-distance) * -1) var(--glow-distance) var(--green-highlight),
-                calc(var(--glow-distance) * -1) var(--glow-distance) var(--glow-distance) var(--green-highlight); */
-
 }
 
 .portfolio-empty a {
@@ -429,12 +420,6 @@ a:hover {
     object-fit: cover;
 }
 
-/* .portfolio-item-heart-img:hover > img {
-    position: relative;
-    z-index: 0;
-    transform: scale(1.01);
-} */
-
 @keyframes grow {
     to {
         transform: translate(-50%, -100%) rotate(var(--rotation, 0deg)) scale(10);
@@ -442,30 +427,6 @@ a:hover {
     }
 }
 
-/* .portfolio-item-heart-img {
-    height: 100%;
-    background: url(images/avb_ment_ig_a3.png) no-repeat center center/cover;
-    cursor: pointer;
-    max-width: 100%;
-    position: relative;
-}
-
-.fa-heart {
-    color: red;
-}
-
-.portfolio-item-heart-img .fa-heart {
-    position: absolute;
-    animation: grow 0.6s linear;
-    transform: translate(-50%, -50%) scale(0);
-}
-
-@keyframes grow {
-    to {
-        transform: translate(-50%, -50%) scale(10);
-        opacity: 0;
-    }
-} */
 
 
 
@@ -591,9 +552,6 @@ h5 {
     grid-row: span 2;
 }
 
-/* .project-grid .grid-gif {
-    height: 20px;
-} */
 
 @media screen and (max-width: 600px) {
     .project-grid {
