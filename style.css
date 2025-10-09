@@ -61,6 +61,7 @@ a {
 
 a:hover {
     text-decoration: underline;
+    text-decoration-color: currentColor;
 }
 
 
@@ -311,19 +312,32 @@ a:hover {
     animation: rotationAnimation 5s infinite;
 }
 
-.portfolio-empty p {
+.portfolio-empty h3 {
     --glow-distance: 1px;
 
     overflow: hidden;
+    font-size: 40px;
+    font-weight: normal;
 
 
-    user-select: none;
+    /* user-select: none;
 
         text-shadow: var(--glow-distance) var(--glow-distance) var(--glow-distance) var(--green-highlight),
                 calc(var(--glow-distance) * -1) calc(var(--glow-distance) * -1) var(--glow-distance) var(--green-highlight),
                 var(--glow-distance) calc(var(--glow-distance) * -1) var(--glow-distance) var(--green-highlight),
-                calc(var(--glow-distance) * -1) var(--glow-distance) var(--glow-distance) var(--green-highlight);
+                calc(var(--glow-distance) * -1) var(--glow-distance) var(--glow-distance) var(--green-highlight); */
 
+}
+
+.portfolio-empty a {
+    color: white;
+    text-decoration: none;
+}
+
+.portfolio-empty h3 a:hover {
+    text-decoration: none;
+    text-decoration-color: white;
+    color: white;
 }
 
 .portfolio-empty img {
@@ -415,11 +429,11 @@ a:hover {
     object-fit: cover;
 }
 
-.portfolio-item-heart-img:hover > img {
+/* .portfolio-item-heart-img:hover > img {
     position: relative;
     z-index: 0;
     transform: scale(1.01);
-}
+} */
 
 @keyframes grow {
     to {
